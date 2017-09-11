@@ -30,3 +30,7 @@ results
 ### NPM ###
 npm-debug.log
 node_modules
+
+# Config variables
+sendgrid.env
+.env
