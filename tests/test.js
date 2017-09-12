@@ -1,16 +1,19 @@
 var expect = require('chai').expect;
-var stubs = require('./Stubs');
 
-var emailer = require('../emailer/emailer');
+var emailer = require('../controllers/emailer');
 
 describe('Email Service', function() {
   it('should answer GET requests for / with a 200 status code', function() {
-    var req = new stubs.request('/', 'GET');
-    var res = new stubs.response();
+    var message = {
+      to: 'test@test.com',
+      from: 'Test <me@test.com>',
+      subject: 'This is a test',
+      text: 'Test passed.',
+      html: '<strong>Test passed.</strong>',
+    };
 
-    emailer.requestHandler();
-
-    expect(res._responseCode).to.equal(200);
-    expect(res._ended).to.equal(true);
+    emailer.sendEmail(message, function(error, response) {
+      expect(response.statusCode.to.equal(202));
+    });
   });
 });

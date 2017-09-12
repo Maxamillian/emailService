@@ -1,6 +1,6 @@
 var sendGrid = require('./sendGrid');
 
-var requestHandler = function(request, response) {
+var sendEmail = function() {
   var message = {
     to: 'maxamillian_berger@yahoo.com',
     from: 'Max Berger <maxamillianberger@gmail.com>',
@@ -9,7 +9,11 @@ var requestHandler = function(request, response) {
     html: '<strong>Great, it worked!</strong>',
   };
 
-  sendGrid.sendEmail(message);
+  sendGrid.sendEmail(message, function(wasSuccessful) {
+    if (!wasSuccessful) {
+      // call secondary email service
+    }
+  });
 };
 
-module.exports.requestHandler = requestHandler;
+module.exports.sendEmail = sendEmail;
