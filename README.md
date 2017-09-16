@@ -21,7 +21,12 @@
   ```
 
 3. **Open the application in your browser to initiate the service:**
+
   In your browser, navigate to `localhost:3000`
+
+## Customize your email
+
+Navigate to controllers/emailer.js. Starting on line 5 is an object which contains the information of the email. This data is the only thing you should have to edit in order to customize your email.
 
 ## Testing the backup service
 
