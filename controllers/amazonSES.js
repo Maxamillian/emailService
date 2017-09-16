@@ -3,7 +3,10 @@ var sendEmail = function(message, callback) {
   var aws = require('aws-sdk');
 
   // Load your AWS credentials and try to instantiate the object.
-  aws.config.loadFromPath(__dirname + '/config.json');
+  // aws.config.loadFromPath(__dirname + '/config.json');
+  aws.config.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+  aws.config.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+  aws.config.region = process.env.AWS_REGION;
 
   // Instantiate SES.
   var ses = new aws.SES();
