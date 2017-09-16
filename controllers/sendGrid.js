@@ -10,7 +10,7 @@ var sendEmail = function(message, callback) {
     .then(function(response) {
       console.log('success');
       // set to false to test backup service.
-      callback(false);
+      callback(true);
     })
     .catch(function(error) {
       console.error({error});
