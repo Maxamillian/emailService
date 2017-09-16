@@ -15,12 +15,12 @@
   npm install
   ```
 
-2. **Start the application
+2. **Start the application:**
   ```bash
   npm start
   ```
 
-3. **Open the application in your browser to initiate the service**
+3. **Open the application in your browser to initiate the service:**
   In your browser, navigate to `localhost:3000`
 
 ## Testing the backup service
